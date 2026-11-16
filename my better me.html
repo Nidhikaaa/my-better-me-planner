@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="./icons/icon-192.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Better Me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#29203b">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <h1>My Better Me <span>✦</span></h1>
+                <p>A little progress every day 💜</p>
+            </div>
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome-card">
+            <p>YOUR PERSONAL SPACE ✨</p>
+            <h2>Become your best self.</h2>
+            <p>Small habits. Big changes. One day at a time.</p>
+        </section>
+
+        <!-- Today's Goals -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <div>
+                    <p>YOUR DAILY ROUTINE 🌸</p>
+                    <h2>Today's Goals</h2>
+                </div>
+                <span>💜</span>
+            </div>
+
+            <div class="progress-card">
+                <div class="progress-top">
+                    <div>
+                        <p>DAILY PROGRESS</p>
+                        <h2 id="progress-text">0%</h2>
+                    </div>
+                    <span>✨</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+
+                <p id="progress-message">Every little step counts! ✨</p>
+            </div>
+
+            <button id="add-habit-btn" class="add-habit-btn">
+                + Add a New Habit
+            </button>
+
+            <div id="habit-grid" class="habit-grid"></div>
+
+        </section>
+
+        <!-- Weekly Progress -->
+        <section class="weekly-section">
+
+            <div class="section-heading">
+                <div>
+                    <p>YOUR CONSISTENCY 📈</p>
+                    <h2>Weekly Progress</h2>
+                </div>
+                <span>🌷</span>
+            </div>
+
+            <div class="weekly-summary">
+                <p>YOUR WEEKLY AVERAGE</p>
+                <h2 id="weekly-average">0%</h2>
+                <p>Keep showing up for yourself!</p>
+            </div>
+
+            <div id="weekly-chart" class="weekly-chart"></div>
+
+        </section>
+
+        <!-- Weekly Planner -->
+        <section class="planner-section">
+
+            <div class="section-heading">
+                <div>
+                    <p>PLAN YOUR DAYS 🗓️</p>
+                    <h2>My Weekly Planner</h2>
+                </div>
+                <span>💜</span>
+            </div>
+
+            <div class="planner-selector">
+                <label for="planner-day-select">
+                    Choose your day ✨
+                </label>
+
+                <select id="planner-day-select">
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+            </div>
+
+            <div id="weekly-planner"></div>
+
+        </section>
+
+        <footer>
+            <p>Made with 💜 for a better you.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js")
+        .then(registration => console.log("Service Worker registered:", registration.scope))
+        .catch(error => console.error("Service Worker registration failed:", error));
+    });
+  }
+</script>
+</body>
+</html>
+
+ 
